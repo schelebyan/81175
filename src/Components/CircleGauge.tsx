@@ -72,7 +72,7 @@ export default function CircleGauge({ value }: Props): JSX.Element {
     margin: 0 auto;
     width: var(--size);
     height: calc(var(--size) - 20px);
-    animation: ${progressAnimation} 100ms ease 0s 1 forwards;
+    animation: ${progressAnimation} 100ms linear 0s 1 forwards;
   `;
 
   const Text = styled("text")`
