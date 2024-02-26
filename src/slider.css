@@ -1,0 +1,30 @@
+.slider {
+  max-width: 100%;
+  margin-top: 15px;
+}
+
+.slider-track {
+  top: 11px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--theme-card-accent-color-darker) 10%, var(--theme-card-accent-color-lighter) 100%);
+  border: 1px solid color-mix(in srgb, var(--theme-card-accent-color), #000 70%);
+  /*this is to prevent react-slider lib from adjusting track position which will affect the gradient style*/
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.slider-track.slider-track-0 {
+  /*this is to prevent react-slider lib from adjusting track position which will affect the gradient style*/
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.slider-thumb {
+  cursor: pointer;
+  background: var(--theme-slider-thumb-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  outline: none;
+}

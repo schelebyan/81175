@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  background-color: var(--theme-bg-color);
+  line-height: 1.5em;
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --theme-card-accent-color: #85c55c;
+  --theme-bg-color: #000000;
+  --theme-card-bg-color: #15161a;
+  --theme-card-corner-radius: 8px;
+  --theme-card-border-color: #1c1d22;
+  --theme-card-text-color: #898a91;
+  --theme-card-headline-color: #e4e5ea;
+  --theme-card-accent-color-darker: color-mix(in srgb, var(--theme-card-accent-color), #000 80%);
+  --theme-card-accent-color-medium: color-mix(in srgb, var(--theme-card-accent-color), #000 70%);
+  --theme-card-accent-color-lighter: color-mix(in srgb, var(--theme-card-accent-color), #FFF 5%);
+  --theme-gauge-bg-color: #25252a;
+  --theme-gauge-border-color: #303035;
+  --theme-chart-border-color: #51535a;
+  --theme-slider-thumb-color: #f4f4f4;
+  --theme-states-marker-color: #b0853b;
+}
+
+.circular-progress {
+  --size: 110px;
+  --half-size: calc(var(--size) / 2);
+  --stroke-width: 6px;
+  --radius: calc((var(--size) - var(--stroke-width)) / 2);
+  --circumference: calc(var(--radius) * pi * 2);
+  --dash: calc((var(--progress) * var(--circumference)) / 100);
+}
+
+@property --progress {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes fadeInBackgroundAnimation {
+  0% {
+    background-color: var(--theme-gauge-bg-color);
+    border-color: var(--theme-gauge-border-color);
+  }
+  100% {
+    background-color: var(--theme-card-accent-color);
+    border-color: var(--theme-card-accent-color);
+  }
+}
+@keyframes fadeOutBackgroundAnimation {
+  0% {
+    background-color: var(--theme-card-accent-color);
+    border-color: var(--theme-card-accent-color);
+  }
+  100% {
+    background-color: var(--theme-gauge-bg-color);
+    border-color: var(--theme-gauge-border-color);
+  }
+}
